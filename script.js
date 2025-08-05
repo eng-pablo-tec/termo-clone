@@ -90,4 +90,16 @@ function revealWord(guess) {
 
   if (guess === answer) {
     showMessage("Parabéns! Você acertou!");
-    is
+    isGameOver = true;
+  } else if (currentRow === 5) {
+    showMessage(`Fim de jogo! A palavra era: ${answer.toUpperCase()}`);
+    isGameOver = true;
+  } else {
+    currentRow++;
+    currentCol = 0;
+  }
+}
+
+function showMessage(msg) {
+  message.textContent = msg;
+}
